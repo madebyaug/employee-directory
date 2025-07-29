@@ -39,6 +39,13 @@ app.get("/employees/:id", (req, res, next) => {
   // https://www.google.com/search?client=safari&rls=en&q=.find+javascript+to+locate+array+id&ie=UTF-8&oe=UTF-8
 
   const employeeID = Number(req.params.id);
+
+  /*
+  Got this wrong on quized. Below shows why (beginner method):
+  const { id } = req.params;
+  const employeeID = Number(id);
+  */
+
   const matchID = employees.find((employee) => employee.id === employeeID);
 
   try {
